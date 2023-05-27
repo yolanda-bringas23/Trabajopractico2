@@ -1,0 +1,39 @@
+body{
+    background-color: #f9eae1;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Russo One', sans-serif;
+    font-family: 'Shrikhand', cursive;
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 120px 105px 105px 105px 105px;
+    gap: 5px;
+    width: 600px;
+    text-align: center;
+}
+
+.contenedor .item{
+    font-size: 30px;
+    background-color: #7d4f50;
+    color: white;
+}
+
+.contenedor .item:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.contenedor .item.pantalla{
+    grid-column: 1/5;
+    background-color: white;
+    color:black;
+}
+.contenedor .item.borrar{
+    background-color: #cc8b86;
+}
