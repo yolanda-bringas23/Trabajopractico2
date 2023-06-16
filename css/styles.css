@@ -13,27 +13,47 @@ body{
 .contenedor{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 120px 105px 105px 105px 105px;
+    grid-template-rows: 120px 105px 105px 105px 105px 70px;
     gap: 5px;
     width: 600px;
     text-align: center;
 }
 
-.contenedor .item{
+.contenedor .numero{
     font-size: 30px;
     background-color: #7d4f50;
     color: white;
 }
 
-.contenedor .item:hover{
+.contenedor .numero:hover{
     background-color: gray;
     cursor: pointer;
 }
-.contenedor .item.pantalla{
+
+.contenedor .operacion{
+    font-size: 30px;
+    background-color: #d1be9c;
+    color: white;
+}
+
+.contenedor .operacion:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.contenedor .pantalla{
     grid-column: 1/5;
     background-color: white;
     color:black;
+    overflow: scroll;
+    font-size: 30px;
 }
-.contenedor .item.borrar{
+.contenedor .borrar{
     background-color: #cc8b86;
+    font-size: 30px;
+    grid-column: 1/5;
+}
+
+.contenedor .borrar:hover{
+    background-color: gray;
+    cursor: pointer;
 }
