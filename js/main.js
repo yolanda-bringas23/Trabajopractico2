@@ -1,33 +1,49 @@
 const pantalla = document.querySelector('.pantalla'); 
-const botonesNumeros = document.querySelectorAll('.numero');
-console.log(botonesNumeros);
-const botonesOperadores = document.querySelectorAll('.operacion');
+const numeros = document.querySelectorAll('.numero');
+const operadores = document.querySelectorAll('.ope');
+const igual = document.querySelector('.igual');
+const borrar = document.querySelector('.borrar');
 let operandoActual = '';
 let operandoAnterior = ''; 
 let operador = ''; 
 let resultado = '';
 
-const suma = (a,b) => {
-    return a + b;
-}
- 
-const resta = (a,b) => {
-    return a - b;
-}
 
-const multiplicacion = (a,b) => {
-    return a * b;
-}
-
-const division = (a,b) => {
-    return a / b;
-}
-
-
-botonesNumeros.forEach(boton => {
-    boton.addEventListener('click', () => {
-        console.log(boton);
+numeros.forEach((numero) => {
+    numero.addEventListener('click', () => {
+        operandoActual += numero.innerHTML;
+        pantalla.innerHTML = operandoActual;
     })
 })
 
+operadores.forEach((ope) => {
+    ope.addEventListener('click', () => {
+        operandoAnterior = operandoActual;
+        operandoActual = '';
+        operador = ope.innerHTML;
+    })
+})
 
+igual.addEventListener('click',() => {
+    switch(operador){
+        case 'x':
+            resultado = parseFloat(operandoAnterior) * parseFloat(operandoActual);
+            break
+        case '/':
+            resultado = parseFloat(operandoAnterior) / parseFloat(operandoActual);
+            break
+        case '-':
+            resultado = parseFloat(operandoAnterior) - parseFloat(operandoActual);
+            break
+        case '+':
+            resultado = parseFloat(operandoAnterior) + parseFloat(operandoActual);
+            break
+        default:
+            console.log('Operacion no valida');
+    }
+    pantalla.innerHTML = resultado;
+})
+
+borrar.addEventListener('click',() => {
+    pantalla.innerHTML = '';
+})

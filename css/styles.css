@@ -30,16 +30,28 @@ body{
     cursor: pointer;
 }
 
-.contenedor .operacion{
+.contenedor .ope{
     font-size: 30px;
     background-color: #d1be9c;
     color: white;
 }
 
-.contenedor .operacion:hover{
+.contenedor .ope:hover{
     background-color: gray;
     cursor: pointer;
 }
+
+.contenedor .igual{
+    font-size: 30px;
+    background-color: #d1be9c;
+    color: white;
+}
+
+.contenedor .igual:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
 .contenedor .pantalla{
     grid-column: 1/5;
     background-color: white;
@@ -47,6 +59,7 @@ body{
     overflow: scroll;
     font-size: 30px;
 }
+
 .contenedor .borrar{
     background-color: #cc8b86;
     font-size: 30px;
