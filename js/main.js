@@ -1,49 +1,51 @@
-const pantalla = document.querySelector('.pantalla'); 
-const numeros = document.querySelectorAll('.numero');
-const operadores = document.querySelectorAll('.ope');
-const igual = document.querySelector('.igual');
-const borrar = document.querySelector('.borrar');
-let operandoActual = '';
-let operandoAnterior = ''; 
-let operador = ''; 
-let resultado = '';
+const numeros = document.querySelectorAll(".numero");
+const oper = document.querySelectorAll(".operadores");
+const igual = document.querySelector(".igual");
+const borrar = document.querySelector(".borrar");
+const pantalla = document.querySelector(".pantalla"); 
+
+let operandoActual = "";
+let operandoAnterior = ""; 
+let resultado = ""; 
+let operador = ""; 
 
 
 numeros.forEach((numero) => {
-    numero.addEventListener('click', () => {
+    numero.addEventListener("click", () => {
         operandoActual += numero.innerHTML;
         pantalla.innerHTML = operandoActual;
     })
 })
 
-operadores.forEach((ope) => {
-    ope.addEventListener('click', () => {
+oper.forEach((operadores) => {
+    operadores.addEventListener("click", () => {
         operandoAnterior = operandoActual;
-        operandoActual = '';
-        operador = ope.innerHTML;
+        operandoActual = "";
+        operador = operadores.innerHTML;
     })
 })
 
-igual.addEventListener('click',() => {
-    switch(operador){
-        case 'x':
-            resultado = parseFloat(operandoAnterior) * parseFloat(operandoActual);
-            break
-        case '/':
-            resultado = parseFloat(operandoAnterior) / parseFloat(operandoActual);
-            break
-        case '-':
-            resultado = parseFloat(operandoAnterior) - parseFloat(operandoActual);
-            break
-        case '+':
+igual.addEventListener("click",() => {
+    switch(operador) {
+        case "+":
             resultado = parseFloat(operandoAnterior) + parseFloat(operandoActual);
-            break
+            console.log(resultado);
+            break;
+        case "-":
+            resultado = parseFloat(operandoAnterior) - parseFloat(operandoActual);
+            break;
+        case "/":
+            resultado = parseFloat(operandoAnterior) / parseFloat(operandoActual);
+            break;
+        case "x":
+            resultado = parseFloat(operandoAnterior) * parseFloat(operandoActual);
+            break;
         default:
-            console.log('Operacion no valida');
+            console.log("operacion no valida");
     }
     pantalla.innerHTML = resultado;
 })
 
-borrar.addEventListener('click',() => {
-    pantalla.innerHTML = '';
+borrar.addEventListener("click",() => {
+    pantalla.innerHTML = "";
 })

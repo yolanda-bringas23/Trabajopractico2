@@ -30,13 +30,13 @@ body{
     cursor: pointer;
 }
 
-.contenedor .ope{
+.contenedor .operadores{
     font-size: 30px;
     background-color: #d1be9c;
     color: white;
 }
 
-.contenedor .ope:hover{
+.contenedor .operadores:hover{
     background-color: gray;
     cursor: pointer;
 }
