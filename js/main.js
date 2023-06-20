@@ -7,7 +7,7 @@ const pantalla = document.querySelector(".pantalla");
 let operandoActual = "";
 let operandoAnterior = ""; 
 let resultado = ""; 
-let operador = ""; 
+let operador = "";
 
 const suma = (a,b) => {
     return a + b;
