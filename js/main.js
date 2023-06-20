@@ -9,6 +9,21 @@ let operandoAnterior = "";
 let resultado = ""; 
 let operador = ""; 
 
+const suma = (a,b) => {
+    return a + b;
+}
+
+const resta = (a,b) => {
+    return a - b;
+}
+
+const division = (a,b) => {
+    return a / b;
+}
+
+const multiplicar = (a,b) => {
+    return a * b;
+}
 
 numeros.forEach((numero) => {
     numero.addEventListener("click", () => {
@@ -19,33 +34,38 @@ numeros.forEach((numero) => {
 
 oper.forEach((operadores) => {
     operadores.addEventListener("click", () => {
-        operandoAnterior = operandoActual;
-        operandoActual = "";
+        if (operandoAnterior == ""){
+            operandoAnterior = operandoActual;
+            operandoActual = "";
+        }
         operador = operadores.innerHTML;
     })
 })
 
+
 igual.addEventListener("click",() => {
     switch(operador) {
         case "+":
-            resultado = parseFloat(operandoAnterior) + parseFloat(operandoActual);
-            console.log(resultado);
+            resultado = suma(parseFloat(operandoAnterior), parseFloat(operandoActual));
             break;
         case "-":
-            resultado = parseFloat(operandoAnterior) - parseFloat(operandoActual);
+            resultado = resta(parseFloat(operandoAnterior), parseFloat(operandoActual));
             break;
         case "/":
-            resultado = parseFloat(operandoAnterior) / parseFloat(operandoActual);
+            resultado = division(parseFloat(operandoAnterior), parseFloat(operandoActual));
             break;
-        case "x":
-            resultado = parseFloat(operandoAnterior) * parseFloat(operandoActual);
+        case "*":
+            resultado = multiplicar(parseFloat(operandoAnterior), parseFloat(operandoActual));
             break;
-        default:
+        //default:
             console.log("operacion no valida");
+        
     }
     pantalla.innerHTML = resultado;
 })
 
 borrar.addEventListener("click",() => {
     pantalla.innerHTML = "";
+    operandoAnterior = ""; 
+    operandoActual = ""; 
 })
