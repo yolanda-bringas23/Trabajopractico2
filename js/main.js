@@ -23,7 +23,7 @@ const division = (a,b) => {
 
 const multiplicar = (a,b) => {
     return a * b;
-}
+} 
 
 numeros.forEach((numero) => {
     numero.addEventListener("click", () => {
